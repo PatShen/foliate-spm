@@ -21,14 +21,19 @@ let package = Package(
         .target(
             name: "foliate-spm",
             path: "Sources/",
-            exclude: [
-                "Resources/foliate-js/LICENSE",
-                "Resources/foliate-js/README.md",
-                "Resources/foliate-js/reader.html",
-                "Resources/foliate-js/rollup/"
-            ],
             resources: [
-                .process("Resources/foliate-js/"),
+                .process("Resources/foliate-js/reader.html"),
+                .process("Resources/foliate-js/reader.js"),
+                .process("Resources/foliate-js/view.js"),
+                .process("Resources/foliate-js/ui/tree.js"),
+                .process("Resources/foliate-js/ui/menu.js"),
+                .process("Resources/foliate-js/overlayer.js"),
+                .process("Resources/foliate-js/progress.js"),
+                .process("Resources/foliate-js/text-walker.js"),
+                .process("Resources/foliate-js/epub.js"),
+                .process("Resources/foliate-js/epubcfi.js"),
+                .copy("Resources/foliate-js/"),
+                .copy("Resources/foliate-js/ui/")
             ],
         ),
         .testTarget(
